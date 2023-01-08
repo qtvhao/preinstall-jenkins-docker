@@ -33,5 +33,5 @@ RUN apt-get install docker-compose-plugin
 
 RUN mkdir -p /var/jenkins_home/
 COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
-RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
+RUN jenkins-plugin-cli --plugin-file /usr/share/jenkins/ref/plugins.txt
 COPY casc.yaml /var/jenkins_home/casc.yaml
